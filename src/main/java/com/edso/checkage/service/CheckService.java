@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Service
 @Slf4j
@@ -24,17 +22,9 @@ public class CheckService {
         Mom mom = new Mom(data, latch, name, age);
         Ubnd ubnd = new Ubnd(data, latch, name, age);
 
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-
-        executor.execute(dad);
-        executor.execute(mom);
-        executor.execute(ubnd);
-
-        executor.shutdown();
-
-//        dad.start();
-//        mom.start();
-//        ubnd.start();
+        dad.start();
+        mom.start();
+        ubnd.start();
 
         latch.await();
 

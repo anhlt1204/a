@@ -29,7 +29,7 @@ public class Ubnd extends Thread {
     @Override
     public void run() {
         boolean flag = false;
-        log.info("u start" + name);
+        log.info("u start " + name);
         try {
             Thread.sleep(2000);
             if (checkAge(readFile())) {
@@ -46,7 +46,7 @@ public class Ubnd extends Thread {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        log.info("u stop" + name);
+        log.info("u stop " + name);
     }
 
     private Date readFile() throws IOException {

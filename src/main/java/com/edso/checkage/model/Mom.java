@@ -27,7 +27,7 @@ public class Mom extends Thread {
     @Override
     public void run() {
         boolean flag = false;
-        log.info("m start" + name);
+        log.info("m start " + name);
         try {
             Thread.sleep(5000);
             if (checkAge(readFile())) {
@@ -44,7 +44,7 @@ public class Mom extends Thread {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        log.info("m stop" + name);
+        log.info("m stop " + name);
     }
 
     private int readFile() throws IOException {

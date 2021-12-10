@@ -25,7 +25,7 @@ public class Dad extends Thread {
     @Override
     public void run() {
         boolean flag = false;
-        log.info("d start" + name);
+        log.info("d start " + name);
         try {
             Thread.sleep(1000);
             if (checkAge(readFile())) {
@@ -41,8 +41,10 @@ public class Dad extends Thread {
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
+        }finally {
+
         }
-        log.info("d stop" + name);
+        log.info("d stop " + name);
     }
 
     private int readFile() throws IOException {
